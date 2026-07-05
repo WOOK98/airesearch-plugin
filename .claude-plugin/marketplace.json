@@ -1,0 +1,15 @@
+{
+  "name": "airesearch-marketplace",
+  "owner": {
+    "name": "Wook",
+    "url": "https://www.airesearchs.com"
+  },
+  "plugins": [
+    {
+      "name": "airesearch",
+      "source": "./",
+      "description": "Six-lens equity research reports (Supply Chain, Fundamentals, Macro, Technicals, Sentiment, Risk Matrix). Deep Dive for full reports, Snapshot for quick reads.",
+      "category": "research"
+    }
+  ]
+}

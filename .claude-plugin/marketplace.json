@@ -8,7 +8,7 @@
     {
       "name": "airesearch",
       "source": "./",
-      "description": "Six-lens equity research reports (Supply Chain, Fundamentals, Macro, Technicals, Sentiment, Risk Matrix). Deep Dive for full reports, Snapshot for quick reads.",
+      "description": "Six-lens equity research reports (Supply Chain, Fundamentals, Macro, Technicals, Sentiment, Risk Matrix). Deep Dive for full reports, Snapshot for quick reads. Industry Mode for theme queries.",
       "category": "research"
     }
   ]

@@ -1,10 +1,16 @@
 ---
-description: Full six-lens equity research report on a ticker (Supply Chain, Fundamentals, Macro, Technicals, Sentiment, Risk Matrix)
-argument-hint: TICKER [focus: supply-chain|fundamentals|macro|technicals|sentiment|risk]
+description: Full six-lens equity research report on a ticker, or industry/theme value-chain analysis
+argument-hint: TICKER|THEME [focus: supply-chain|fundamentals|macro|technicals|sentiment|risk]
 ---
 
 Run the `deep-dive` skill on: $ARGUMENTS
 
-If a second argument is present, treat it as the optional focus lens per the
-skill's "Optional focus argument" section. Otherwise produce the full
-six-lens report.
+If the input is a valid ticker, produce the full six-lens report. If a
+second argument is present, treat it as the optional focus lens per the
+skill's "Optional focus argument" section.
+
+If the input is NOT a valid ticker (industry, material, theme — e.g.
+"Humanoid robot", "HBM", "liquid silicone rubber"), use Industry Mode:
+resolve via MCP `resolve_entity` + `get_etf_holdings` for real constituent
+data, then produce the value-chain analysis per the skill's Industry Mode
+section.

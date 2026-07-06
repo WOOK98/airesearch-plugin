@@ -1,13 +1,13 @@
 {
   "name": "airesearch",
   "displayName": "AIResearch — Multi-Lens Stock Deep Dive",
-  "version": "0.1.0",
-  "description": "Six-lens equity research reports (Supply Chain, Fundamentals, Macro, Technicals, Sentiment, Risk Matrix) generated in one pass. Deep Dive for full reports, Snapshot for quick reads.",
+  "version": "0.2.0",
+  "description": "Six-lens equity research reports (Supply Chain, Fundamentals, Macro, Technicals, Sentiment, Risk Matrix) generated in one pass. Deep Dive for full reports, Snapshot for quick reads. Industry Mode for theme/industry queries with real ETF constituent data.",
   "author": {
     "name": "Wook",
     "url": "https://www.airesearchs.com"
   },
   "repository": "https://github.com/WOOK98/airesearch-plugin",
-  "keywords": ["stocks", "equity-research", "investing", "supply-chain", "ai-semiconductors", "due-diligence"],
+  "keywords": ["stocks", "equity-research", "investing", "supply-chain", "ai-semiconductors", "due-diligence", "industry-analysis"],
   "license": "MIT"
 }

@@ -83,15 +83,64 @@ multi-lens research is each lens silently guessing a different company.
    caveat.
 4. **Write the verdict.** End with a Conviction Summary (see Output format).
 
-## Industry Mode (fallback for non-ticker queries)
+## Industry Mode (theme / industry / material queries)
 
-When the user confirms they want an industry/material/theme (e.g. "liquid
-silicone rubber", "HBM", "grid transformers"), produce instead: (a) a value
-chain map of the industry (Lens 1 methodology applied to the sector), (b) a
-table of the key LISTED players per chain layer with tickers, exchanges,
-and market caps, (c) which layers show bottleneck dynamics, and (d) an
-offer to run a full Deep Dive on any named player. Do not output
-per-company technicals or conviction tiers in Industry Mode.
+When the input is NOT a valid ticker — it's an industry, material, product
+area, or multi-word theme (e.g. "Humanoid robot", "liquid silicone rubber",
+"HBM", "grid transformers") — use Industry Mode instead of forcing the
+single-stock framework.
+
+### Data source: ETF holdings (preferred)
+
+Theme ETFs are professionally curated lists of listed companies for a
+theme, with portfolio weights. If the `airesearch-data` MCP server is
+connected:
+
+1. Call `resolve_entity` on the theme query. If it returns candidates with
+   `quoteType === "ETF"`, those are theme ETFs.
+2. Call `get_etf_holdings` for up to 3 ETF candidates. Each returns
+   `{ symbol, name, weightPct }[]`.
+3. Merge holdings across ETFs:
+   - Track each constituent's average portfolio weight across ETFs.
+   - Track consensus: how many of the theme ETFs hold each name.
+   - Sort by consensus descending, then weight descending. Take top 20.
+4. The merged list IS the constituent universe. Every company in the
+   report must come from this list or from the provided search context —
+   never from memory alone.
+
+If no ETF candidates exist or `get_etf_holdings` returns empty, fall back
+to web-search-only mode (below).
+
+### Web-search-only fallback
+
+When the MCP server is not connected or no theme ETFs are available, use
+web search to identify key listed players. Be explicit in the report:
+"Constituent list derived from web search — no theme-ETF holdings data
+available." Only name companies that appear in the search results; never
+from memory alone.
+
+### Output
+
+Produce:
+
+(a) **Value chain map** of the industry (Lens 1 methodology applied to the
+    sector) — upstream, midstream, downstream layers.
+(b) **Constituent table**: key LISTED players per chain layer with tickers,
+    exchanges, market caps, and (when available) avg portfolio weight and
+    ETF consensus.
+(c) **Bottleneck analysis**: which layers show bottleneck dynamics
+    (sole-source, pricing power, small % of downstream BOM).
+(d) **Deep Dive offer**: suggest 2–3 constituents worth a full six-lens
+    Deep Dive, with a one-line reason for each.
+
+### Hard rules for Industry Mode
+
+- The constituent universe is the ONLY source of company names. Do not
+  add companies from memory.
+- Do NOT output per-stock technicals, price targets, entry/stop levels,
+  or conviction tiers — those require a single-stock Deep Dive.
+- If the theme has no ETF data AND no search results, say so. Never
+  fabricate a player list.
 
 ## Optional focus argument
 

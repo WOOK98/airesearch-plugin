@@ -19,6 +19,7 @@ Then:
 ```bash
 /deep-dive NVDA          # full six-lens report
 /deep-dive AXTI risk     # single-lens focus
+/deep-dive "Humanoid robot"  # industry mode: value chain + constituent universe
 /snapshot MU             # 30-second read
 ```
 
@@ -76,6 +77,8 @@ Without a key the plugin still works — skills fall back to web search.
 - **v0.2 — Data MCP server.** ✅ Shipped: `resolve_entity`, `get_quote`,
   `get_financials`, `get_technicals` at `airesearchs.com/api/mcp`.
 - **v0.3 — Per-user API keys** issued from the billing dashboard;
+  **`get_etf_holdings` MCP tool** (reuses the website's Industry Mode
+  module — real theme-ETF constituent data in Claude Code);
   **report-to-social skill** bundled (X threads / blog HTML / hero SVG
   from any Deep Dive).
 

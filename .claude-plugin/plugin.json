@@ -8,6 +8,6 @@
     "url": "https://www.airesearchs.com"
   },
   "repository": "https://github.com/WOOK98/airesearch-plugin",
-  "keywords": ["stocks", "equity-research", "investing", "supply-chain", "ai-semiconductors", "due-diligence", "industry-analysis"],
+  "keywords": ["stocks", "equity-research", "investing", "supply-chain", "ai-semiconductors", "due-diligence", "industry-analysis", "mcp", "claude-code"],
   "license": "MIT"
 }

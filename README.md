@@ -4,6 +4,9 @@ Six-lens equity research inside your coding agent. One command, one
 integrated report — no lens-picking, no chat limits, powered by whatever
 model you already pay for.
 
+<!-- TODO: replace with actual 30-second demo GIF -->
+![demo](docs/demo.gif)
+
 **Lenses:** Supply Chain & Value Flow · Fundamentals · Macro · Technicals ·
 Sentiment & Positioning · Risk Matrix & Conviction
 
@@ -25,6 +28,9 @@ Then:
 
 The skills also trigger implicitly — just ask "give me a deep dive on LITE"
 or "quick take on SNDK?".
+
+No API key needed to start — skills work with web search out of the box.
+For live market data, see [Pro data layer](#pro-data-layer-optional).
 
 ## Install — Codex
 
@@ -62,28 +68,47 @@ companion skill: [WOOK98/serenity-aleabitoreddit](https://github.com/WOOK98/sere
 ## Pro data layer (optional)
 
 The plugin ships with an `.mcp.json` pointing at the hosted
-`airesearch-data` MCP server (real-time quotes, GAAP fundamentals, and
-deterministically computed technicals — no LLM-estimated indicators,
-ever). Set your key before starting Claude Code:
+`airesearch-data` MCP server — 5 tools delivering real-time quotes,
+GAAP fundamentals, deterministic technicals, and ETF constituent data.
+No LLM-estimated indicators, ever.
+
+Set your key before starting Claude Code:
 
 ```bash
-export AIRESEARCH_API_KEY=your_key   # get one at airesearchs.com
+export AIRESEARCH_API_KEY=your_key
 ```
+
+**Don't have a key yet?** During the beta, DM [@wook98](https://x.com/wook98)
+or email hello@airesearchs.com — keys are issued manually while the
+self-serve dashboard is in development (see Roadmap below).
 
 Without a key the plugin still works — skills fall back to web search.
 
 ## Roadmap
 
 - **v0.2 — Data MCP server.** ✅ Shipped: `resolve_entity`, `get_quote`,
-  `get_financials`, `get_technicals` at `airesearchs.com/api/mcp`.
-- **v0.3 — Per-user API keys** issued from the billing dashboard;
-  **`get_etf_holdings` MCP tool** (reuses the website's Industry Mode
-  module — real theme-ETF constituent data in Claude Code);
+  `get_financials`, `get_technicals`, `get_etf_holdings` at
+  `airesearchs.com/api/mcp`.
+- **v0.3 — Per-user API keys** issued from the billing dashboard
+  (currently manual during beta);
   **report-to-social skill** bundled (X threads / blog HTML / hero SVG
   from any Deep Dive).
+
+## Data integrity
+
+Four layers protect against hallucinated data:
+1. **Entity resolution first** — every query resolves to a verified listed ticker before any data fetch.
+2. **Deterministic indicators** — RSI, MACD, moving averages computed from raw OHLCV bars, never LLM-estimated.
+3. **Source-attributed fundamentals** — GAAP financials pulled live from Yahoo Finance, not cached summaries.
+4. **Graceful degradation** — if the MCP server is unreachable, skills fall back to web search with a visible warning.
 
 ## Disclaimer
 
 Decision-support analysis, not financial advice. This plugin never places,
 modifies, or cancels orders. Verify all prices and fundamentals before
-acting. MIT licensed.
+acting.
+
+**→ Install:** `/plugin marketplace add WOOK98/airesearch-plugin`
+**→ Docs & API keys:** [airesearchs.com](https://www.airesearchs.com)
+
+MIT licensed.

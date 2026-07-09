@@ -86,10 +86,12 @@ Without a key the plugin still works — skills fall back to web search.
 
 ## Roadmap
 
+- **v0.3 — Industry Mode.** ✅ Shipped: `get_etf_holdings` MCP tool
+  (ETF constituent data + industry universe builder), entity resolution
+  hardening. Server version: 0.3.0.
 - **v0.2 — Data MCP server.** ✅ Shipped: `resolve_entity`, `get_quote`,
-  `get_financials`, `get_technicals`, `get_etf_holdings` at
-  `airesearchs.com/api/mcp`.
-- **v0.3 — Per-user API keys** issued from the billing dashboard
+  `get_financials`, `get_technicals` at `airesearchs.com/api/mcp`.
+- **v0.4 — Per-user API keys** issued from the billing dashboard
   (currently manual during beta);
   **report-to-social skill** bundled (X threads / blog HTML / hero SVG
   from any Deep Dive).
@@ -108,7 +110,6 @@ Decision-support analysis, not financial advice. This plugin never places,
 modifies, or cancels orders. Verify all prices and fundamentals before
 acting.
 
-**→ Install:** `/plugin marketplace add WOOK98/airesearch-plugin`
-**→ Docs & API keys:** [airesearchs.com](https://www.airesearchs.com)
+**→ /plugin marketplace add WOOK98/airesearch-plugin** · [Docs](https://www.airesearchs.com)
 
 MIT licensed.

@@ -39,7 +39,7 @@ read, under ~350 words, that a user can absorb in 30 seconds.
 - **Bull vs. bear:** 2 points each, one line per point.
 - **Tier + next catalyst:** S/A/B/C/D/F tier (same rubric as deep-dive's
   risk-matrix reference), the next dated catalyst, and when a full Deep
-  Dive would be warranted ("run /deep-dive TICKER for the full six-lens
+  Dive would be warranted ("run /airesearch:deep-dive TICKER for the full six-lens
   report").
 - Close with: *Decision-support analysis, not financial advice.*
 

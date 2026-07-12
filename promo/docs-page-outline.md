@@ -15,9 +15,9 @@
 No API key needed — skills work with web search out of the box.
 
 ### Quick start
-- `/deep-dive NVDA` — full report
-- `/snapshot MU` — quick take
-- `/deep-dive "humanoid robot"` — industry mode
+- `/airesearch:deep-dive NVDA` — full report
+- `/airesearch:snapshot MU` — quick take
+- `/airesearch:deep-dive "humanoid robot"` — industry mode
 
 ### MCP Tools Reference
 

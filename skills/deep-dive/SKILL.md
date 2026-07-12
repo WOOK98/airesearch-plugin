@@ -3,7 +3,7 @@ name: deep-dive
 description: >
   Generate a full six-lens equity research report on any stock or ticker.
   Use this skill whenever the user asks for a deep dive, full analysis,
-  research report, due diligence, "should I buy/sell/hold", a thesis review,
+  research report, due diligence, a thesis review,
   or any substantive opinion on a listed company — even if they don't say
   "report". Covers six lenses in one pass: Supply Chain, Fundamentals, Macro,
   Technicals, Sentiment, and Risk Matrix. For quick one-screen reads, prefer
@@ -144,7 +144,7 @@ Produce:
 
 ## Optional focus argument
 
-If the user asks for a single lens (e.g. "/deep-dive NVDA risk" or "just
+If the user asks for a single lens (e.g. "/airesearch:deep-dive NVDA risk" or "just
 the supply chain view"), produce only that section at 2–3x its target
 length, plus the one-line disclaimer. Valid focus values: `supply-chain`,
 `fundamentals`, `macro`, `technicals`, `sentiment`, `risk`.
@@ -153,12 +153,42 @@ length, plus the one-line disclaimer. Valid focus values: `supply-chain`,
 
 - Respond in the user's language; keep tickers, metric names, and section
   data labels in English.
-- Structure: a 3–5 sentence executive summary up top, then the six
-  sections with `##` headers, then **Conviction Summary**.
-- Conviction Summary must contain: a tier (S/A/B/C/D/F), 2–3 bull points,
-  2–3 bear points, what would upgrade/downgrade the tier, and position
-  sizing guidance in qualitative terms (e.g. "binary microcap — small size
-  or defined-risk options only").
+- Structure:
+  1. **ENTITY LOCK** (from the resolved entity block; unchanged).
+  2. **Three Falsifiable Judgments** — exactly three. Each judgment must
+     include one direct sentence, one numeric anchor, supporting evidence,
+     and `Wrong if:` with a numeric trigger. No number, no judgment.
+  3. The six lens sections with `##` headers, in the table order above.
+     Each lens must end with:
+     - `Lens judgment:` one numeric, falsifiable conclusion.
+     - `How to read this number:` source, measurement basis, timestamp/date,
+       and known blind spot.
+  4. **Thesis Invalidation Conditions** — 2–4 observable signals that would
+     force the thesis to be rechecked. These are not recommendations.
+  5. **Monitor Panel** — a 3–6 row table:
+     `Metric | Current value | Trigger line | Tolerance | Check frequency | Data source`
+  6. A machine-readable monitor JSON block:
+
+     ```json
+     {
+       "schema_version": 1,
+       "monitors": [
+         {
+           "metric": "string",
+           "current": "string",
+           "trigger": "string",
+           "tolerance": "string",
+           "freq": "Daily | Weekly | Quarterly | Event-driven",
+           "source": "string"
+         }
+       ]
+     }
+     ```
+
+  7. **Conviction Tier** — S/A/B/C/D/F as a thesis-quality score only:
+     evidence completeness and logical closure, not whether to buy, sell,
+     hold, size, or allocate.
+  8. **Disclaimer**.
 - Every quantitative claim gets a date or period attached ("Q1 FY26",
   "as of 2026-07-03"). Distinguish facts from estimates from opinion.
 - Close with one line: *Decision-support analysis, not financial advice.
@@ -176,3 +206,5 @@ length, plus the one-line disclaimer. Valid focus values: `supply-chain`,
 - GAAP first; if citing non-GAAP, name the excluded items.
 - Never present the report as a trade instruction and never execute,
   place, or cancel orders under any circumstances.
+- Never output target prices, buy/sell ratings, entry levels, stop levels,
+  portfolio weights, position sizing, or personalized investment instructions.

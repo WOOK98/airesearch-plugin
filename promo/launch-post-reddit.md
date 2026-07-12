@@ -9,7 +9,7 @@ Been working on a plugin for Claude Code that generates structured equity resear
 The fun part was the entity resolution bug. Early version had no verification — type "Liquid Silicone Rubber" and it would confidently treat it as a stock ticker, make up financials, and present them as fact. Fixed it with four layers: entity resolution → entity lock → server-side validation → real-data-only fallback.
 
 ```
-/deep-dive NVDA
+/airesearch:deep-dive NVDA
 → Supply Chain: top 5 suppliers, revenue concentration
 → Fundamentals: Yahoo Finance GAAP data
 → Technicals: deterministic RSI/MACD/MA/ATR from daily OHLCV

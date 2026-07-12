@@ -1,4 +1,5 @@
 ---
+name: deep-dive
 description: Full six-lens equity research report on a ticker, or industry/theme value-chain analysis
 argument-hint: TICKER|THEME [focus: supply-chain|fundamentals|macro|technicals|sentiment|risk]
 ---

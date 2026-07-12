@@ -8,7 +8,7 @@ I've been building an equity research plugin for Claude Code that generates six-
 
 The interesting part isn't the plugin — it's the bug I had to fix along the way.
 
-**The bug:** Early versions had no entity resolution. You'd type `/deep-dive LITE` and the system would happily proceed — even when "LITE" could be Lumentum Holdings (a photonics company) or just the English word. Worse, if you typed something like "Liquid Silicone Rubber" (a material, not a company), it would *invent* a ticker, fabricate financial data, and present it with full confidence.
+**The bug:** Early versions had no entity resolution. You'd type `/airesearch:deep-dive LITE` and the system would happily proceed — even when "LITE" could be Lumentum Holdings (a photonics company) or just the English word. Worse, if you typed something like "Liquid Silicone Rubber" (a material, not a company), it would *invent* a ticker, fabricate financial data, and present it with full confidence.
 
 **The fix:** Four defense layers:
 1. **Entity resolution** — every query goes through a verification step that resolves to exactly one listed ticker, or returns candidates/no-match
@@ -21,7 +21,7 @@ The plugin now has 5 MCP tools (`resolve_entity`, `get_quote`, `get_financials`,
 **What it looks like:**
 
 ```
-/deep-dive NVDA
+/airesearch:deep-dive NVDA
 → Supply Chain: top 5 suppliers mapped, revenue concentration analysis
 → Fundamentals: TTM revenue, margins, FCF, EV/EBITDA from Yahoo Finance
 → Macro: interest rate sensitivity, sector rotation positioning
@@ -32,7 +32,7 @@ The plugin now has 5 MCP tools (`resolve_entity`, `get_quote`, `get_financials`,
 
 Industry mode works too — type a theme instead of a ticker:
 ```
-/deep-dive "humanoid robot"
+/airesearch:deep-dive "humanoid robot"
 → Resolves ETF candidates, pulls constituent holdings, builds value chain universe
 ```
 

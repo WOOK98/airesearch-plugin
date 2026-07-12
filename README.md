@@ -17,13 +17,16 @@ Sentiment & Positioning · Risk Matrix & Conviction
 /plugin install airesearch@airesearch-marketplace
 ```
 
-Then:
+Then reload plugins (or restart Claude Code) and run the namespaced
+commands:
 
 ```bash
-/deep-dive NVDA          # full six-lens report
-/deep-dive AXTI risk     # single-lens focus
-/deep-dive "Humanoid robot"  # industry mode: value chain + constituent universe
-/snapshot MU             # 30-second read
+/reload-plugins
+/airesearch:deep-dive NVDA          # full six-lens report
+/airesearch:deep-dive AXTI risk     # single-lens focus
+/airesearch:deep-dive "Humanoid robot"  # industry mode: value chain + constituent universe
+/airesearch:snapshot MU             # 30-second read
+/airesearch:morning-brief           # watchlist triage
 ```
 
 The skills also trigger implicitly — just ask "give me a deep dive on LITE"
@@ -50,12 +53,13 @@ publishing opens.)
 
 ```
 ├── .claude-plugin/          # plugin + marketplace manifests
-├── commands/                # /deep-dive, /snapshot
+├── commands/                # /airesearch:deep-dive, /airesearch:snapshot, /airesearch:morning-brief
 └── skills/
     ├── deep-dive/
     │   ├── SKILL.md         # report skeleton: 6 sections, output spec
     │   └── references/      # one methodology file per lens
-    └── snapshot/SKILL.md
+    ├── snapshot/SKILL.md
+    └── morning-brief/SKILL.md
 ```
 
 ## Credits
@@ -91,10 +95,11 @@ Without a key the plugin still works — skills fall back to web search.
   hardening. Server version: 0.3.0.
 - **v0.2 — Data MCP server.** ✅ Shipped: `resolve_entity`, `get_quote`,
   `get_financials`, `get_technicals` at `airesearchs.com/api/mcp`.
-- **v0.4 — Per-user API keys** issued from the billing dashboard
-  (currently manual during beta);
-  **report-to-social skill** bundled (X threads / blog HTML / hero SVG
-  from any Deep Dive).
+- **v0.4 — Judgment-first reports + Morning Brief.** Adds the Goldman-style
+  report skeleton (three falsifiable judgments, thesis invalidation
+  conditions, machine-readable monitor panel), namespaced command metadata,
+  and the watchlist Morning Brief skill. Per-user API keys remain manual
+  during beta.
 
 ## Data integrity
 

@@ -4,7 +4,7 @@
 
 **Tweet 1 (Hook)**
 
-在 Claude Code 里输入 `/deep-dive NVDA`，拿到一份六维度个股深度报告——供应链、基本面、宏观、技术面、情绪、风险矩阵，不是 LLM 猜的。
+在 Claude Code 里输入 `/airesearch:deep-dive NVDA`，拿到一份六维度个股深度报告——供应链、基本面、宏观、技术面、情绪、风险矩阵，不是 LLM 猜的。
 
 装一个插件就行。
 
@@ -16,7 +16,7 @@
 
 数据来源是 MCP server 的 `resolve_entity` + `get_financials`，不靠搜索拼凑。（实时数据需接 MCP 数据层，无 key 时走 web search。）
 
-Prompt: `/deep-dive NVDA supply-chain`
+Prompt: `/airesearch:deep-dive NVDA supply-chain`
 
 ---
 
@@ -26,7 +26,7 @@ Prompt: `/deep-dive NVDA supply-chain`
 
 不会出现"根据我的训练数据"这种话——每个数字都有来源标注。
 
-Prompt: `/deep-dive AMD fundamentals`
+Prompt: `/airesearch:deep-dive AMD fundamentals`
 
 ---
 
@@ -34,7 +34,7 @@ Prompt: `/deep-dive AMD fundamentals`
 
 技术面是确定性计算，不是 LLM 估计：RSI、MACD、20/50/200 日均线、ATR，全部从日线 OHLCV 算出来的。
 
-Prompt: `/deep-dive TSLA technicals`
+Prompt: `/airesearch:deep-dive TSLA technicals`
 
 ---
 
@@ -42,7 +42,7 @@ Prompt: `/deep-dive TSLA technicals`
 
 输入一个主题而不是 ticker，比如"humanoid robot"，它会自动解析相关 ETF，拉持仓数据，构建产业链 universe。
 
-Prompt: `/deep-dive "humanoid robot"`
+Prompt: `/airesearch:deep-dive "humanoid robot"`
 
 这是最实用的功能——不用自己翻 ETF 持仓表了。
 
@@ -50,9 +50,9 @@ Prompt: `/deep-dive "humanoid robot"`
 
 **Tweet 6 (快照)**
 
-不需要完整报告时用 `/snapshot`：一个结构化快照，适合盘中快速决策。
+不需要完整报告时用 `/airesearch:snapshot`：一个结构化快照，适合盘中快速决策。
 
-Prompt: `/snapshot MU`
+Prompt: `/airesearch:snapshot MU`
 
 ---
 

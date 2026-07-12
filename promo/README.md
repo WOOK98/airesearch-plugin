@@ -18,17 +18,17 @@ For live market data via the hosted MCP server, see [Pro data layer](#pro-data-l
 ## What you get
 
 ```bash
-/deep-dive NVDA                    # full six-lens report
-/deep-dive AXTI risk               # single-lens focus
-/deep-dive "Humanoid robot"        # industry mode: value chain + ETF universe
-/snapshot MU                       # 30-second quick take
+/airesearch:deep-dive NVDA                    # full six-lens report
+/airesearch:deep-dive AXTI risk               # single-lens focus
+/airesearch:deep-dive "Humanoid robot"        # industry mode: value chain + ETF universe
+/airesearch:snapshot MU                       # 30-second quick take
 ```
 
 Or just ask naturally: *"give me a deep dive on LITE"* / *"quick take on SNDK?"*
 
 ### Example output (abbreviated)
 
-**`/deep-dive NVDA`** produces a structured report covering:
+**`/airesearch:deep-dive NVDA`** produces a structured report covering:
 
 | Lens | What it does |
 |---|---|

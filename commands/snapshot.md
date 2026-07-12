@@ -1,4 +1,5 @@
 ---
+name: snapshot
 description: Fast one-screen stock snapshot with conviction tier
 argument-hint: TICKER
 ---

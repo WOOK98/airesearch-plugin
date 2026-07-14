@@ -1,0 +1,43 @@
+{
+  "name": "airesearch",
+  "version": "0.4.1",
+  "description": "Six-lens equity research reports (Supply Chain, Fundamentals, Macro, Technicals, Sentiment, Risk Matrix) generated in one pass. Deep Dive for full reports, Snapshot for quick reads. Industry Mode for theme/industry queries with real ETF constituent data.",
+  "author": {
+    "name": "Wook",
+    "url": "https://www.airesearchs.com"
+  },
+  "homepage": "https://www.airesearchs.com",
+  "repository": "https://github.com/WOOK98/airesearch-plugin",
+  "license": "MIT",
+  "keywords": [
+    "stocks",
+    "equity-research",
+    "investing",
+    "supply-chain",
+    "due-diligence",
+    "industry-analysis",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.codex-plugin/mcp.json",
+  "interface": {
+    "displayName": "AIResearch — Stock Deep Dive",
+    "shortDescription": "Six-lens equity research: snapshot & deep dive",
+    "longDescription": "Ask for a quick one-screen stock snapshot or a full six-lens research report covering Supply Chain, Fundamentals, Macro, Technicals, Sentiment, and Risk Matrix. Industry Mode maps value chains for themes and materials. Every number is period-labeled and verified; no target prices, ratings, or order execution — decision-support only.",
+    "developerName": "Wook",
+    "category": "Public Equity Investing",
+    "capabilities": [
+      "Interactive"
+    ],
+    "websiteURL": "https://www.airesearchs.com",
+    "defaultPrompt": [
+      "Run a six-lens deep dive on NVDA",
+      "Quick snapshot of 0700.HK",
+      "Map the HBM industry value chain"
+    ],
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.png",
+    "screenshots": [],
+    "brandColor": "#0EA5E9"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "airesearch-data": {
+      "type": "http",
+      "url": "https://www.airesearchs.com/api/mcp",
+      "bearer_token_env_var": "AIRESEARCH_API_KEY"
+    }
+  }
+}

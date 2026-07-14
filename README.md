@@ -79,8 +79,12 @@ No LLM-estimated indicators, ever.
 Set your key before starting Claude Code:
 
 ```bash
-export AIRESEARCH_API_KEY=your_key
+export AIRESEARCH_API_KEY=mcp_your_beta_key
 ```
+
+Use the bare key value only, with no `NAME=` prefix and no quotes. The
+client-side environment variable is always `AIRESEARCH_API_KEY`; do not set
+`MCP_API_KEYS` locally, because that is the server-side allowlist variable.
 
 **Don't have a key yet?** During the beta, DM [@wook98](https://x.com/wook98)
 or email hello@airesearchs.com — keys are issued manually while the

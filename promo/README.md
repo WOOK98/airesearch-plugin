@@ -48,8 +48,12 @@ with 5 tools — real-time quotes, GAAP fundamentals, deterministic technicals,
 and ETF constituent data. No LLM-estimated indicators, ever.
 
 ```bash
-export AIRESEARCH_API_KEY=your_key
+export AIRESEARCH_API_KEY=mcp_your_beta_key
 ```
+
+Use the bare key value only. `AIRESEARCH_API_KEY` is the local Claude Code
+variable; `MCP_API_KEYS` is server-side configuration and should not be set
+by plugin users.
 
 **Don't have a key yet?** During the beta, DM [@wook98](https://x.com/wook98)
 or email hello@airesearchs.com — keys are issued manually while the

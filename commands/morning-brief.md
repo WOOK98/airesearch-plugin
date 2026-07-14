@@ -5,3 +5,6 @@ argument-hint: [--watchlist path]
 ---
 
 Run the `morning-brief` skill on: $ARGUMENTS
+
+This command is registered through the plugin namespace as
+`/airesearch:morning-brief`.

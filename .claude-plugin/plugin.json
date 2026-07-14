@@ -1,7 +1,7 @@
 {
   "name": "airesearch",
   "displayName": "AIResearch — Multi-Lens Stock Deep Dive",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Six-lens equity research reports (Supply Chain, Fundamentals, Macro, Technicals, Sentiment, Risk Matrix) generated in one pass. Deep Dive for full reports, Snapshot for quick reads. Industry Mode for theme/industry queries with real ETF constituent data.",
   "author": {
     "name": "Wook",

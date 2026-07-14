@@ -6,6 +6,9 @@ argument-hint: TICKER|THEME [focus: supply-chain|fundamentals|macro|technicals|s
 
 Run the `deep-dive` skill on: $ARGUMENTS
 
+This command is registered through the plugin namespace as
+`/airesearch:deep-dive`.
+
 If the input is a valid ticker, produce the full six-lens report. If a
 second argument is present, treat it as the optional focus lens per the
 skill's "Optional focus argument" section.

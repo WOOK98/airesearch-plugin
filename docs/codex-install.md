@@ -17,7 +17,7 @@ manifest, so the same repository works in both ecosystems.
       "source": { "source": "local", "path": "./airesearch" },
       "policy": {
         "installation": "AVAILABLE",
-        "authentication": "ON_FIRST_USE"
+        "authentication": "ON_USE"
       },
       "category": "Public Equity Investing"
     }
@@ -37,13 +37,27 @@ rsync -a --delete \
 ```
 
 3. Restart the ChatGPT desktop app. The card appears under
-   插件 → 个人 (Plugins → Personal).
+   Plugins → Personal.
 
 ## Data layer (optional)
 
 Skills work without any key via web-search fallback. For the hosted MCP
 data layer, make `AIRESEARCH_API_KEY` available in the environment the
 desktop app inherits (see README for the variable format), then restart.
+
+## Submission assets
+
+The packaged Codex manifest references:
+
+- `assets/composer-icon.png`
+- `assets/logo-v2.png`
+- `assets/screenshot-snapshot.png`
+- `assets/screenshot-deep-dive.png`
+- `assets/screenshot-morning-brief.png`
+
+The screenshot source is kept at
+`promo/codex-submission/screenshot-source.html`. It is explicitly labeled
+as sample output so no generated image is mistaken for live market data.
 
 ## Updating
 

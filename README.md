@@ -35,19 +35,13 @@ or "quick take on SNDK?".
 No API key needed to start — skills work with web search out of the box.
 For live market data, see [Pro data layer](#pro-data-layer-optional).
 
-## Install — Codex
+## Install — ChatGPT / Codex Personal Marketplace
 
-The `skills/` directories are Codex-compatible (SKILL.md format). Copy them
-into your Codex skills location, e.g.:
+The repository ships a `.codex-plugin/plugin.json` manifest and marketplace
+assets. See [docs/codex-install.md](docs/codex-install.md) for the personal
+marketplace JSON and local install steps.
 
-```bash
-git clone https://github.com/WOOK98/airesearch-plugin
-cp -r airesearch-plugin/skills/* ~/.codex/skills/
-```
-
-Restart Codex, then invoke with `$deep-dive` / `$snapshot` or just ask
-naturally. (Packaged Codex plugin distribution coming when self-serve
-publishing opens.)
+After install, the same skill prompts are available from the plugin card.
 
 ## Structure
 
@@ -73,7 +67,7 @@ companion skill: [WOOK98/serenity-aleabitoreddit](https://github.com/WOOK98/sere
 
 The plugin ships with an `.mcp.json` pointing at the hosted
 `airesearch-data` MCP server — 5 tools delivering real-time quotes,
-GAAP fundamentals, deterministic technicals, and ETF constituent data.
+GAAP fundamentals, deterministic technicals, and constituent data.
 No LLM-estimated indicators, ever.
 
 Set your key before starting Claude Code:
@@ -110,7 +104,7 @@ Without a key the plugin still works — skills fall back to web search.
 Four layers protect against hallucinated data:
 1. **Entity resolution first** — every query resolves to a verified listed ticker before any data fetch.
 2. **Deterministic indicators** — RSI, MACD, moving averages computed from raw OHLCV bars, never LLM-estimated.
-3. **Source-attributed fundamentals** — GAAP financials pulled live from Yahoo Finance, not cached summaries.
+3. **Source-attributed fundamentals** — GAAP financials pulled live from market data tools, not cached summaries.
 4. **Graceful degradation** — if the MCP server is unreachable, skills fall back to web search with a visible warning.
 
 ## Disclaimer

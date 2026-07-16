@@ -1,7 +1,7 @@
 {
   "name": "airesearch",
-  "version": "0.4.1",
-  "description": "Six-lens equity research reports (Supply Chain, Fundamentals, Macro, Technicals, Sentiment, Risk Matrix) generated in one pass. Deep Dive for full reports, Snapshot for quick reads. Industry Mode for theme/industry queries with real ETF constituent data.",
+  "version": "0.4.2",
+  "description": "Six-lens equity research reports (Supply Chain, Fundamentals, Macro, Technicals, Sentiment, Risk Matrix) generated in one pass. Deep Dive for full reports, Snapshot for quick reads. Industry Mode for theme/industry queries with constituent data.",
   "author": {
     "name": "Wook",
     "url": "https://www.airesearchs.com"
@@ -30,14 +30,20 @@
       "Interactive"
     ],
     "websiteURL": "https://www.airesearchs.com",
+    "privacyPolicyURL": "https://www.airesearchs.com/privacy",
+    "termsOfServiceURL": "https://www.airesearchs.com/terms",
     "defaultPrompt": [
       "Run a six-lens deep dive on NVDA",
       "Quick snapshot of 0700.HK",
       "Map the HBM industry value chain"
     ],
-    "composerIcon": "./assets/icon.svg",
-    "logo": "./assets/logo.png",
-    "screenshots": [],
+    "composerIcon": "./assets/composer-icon.png",
+    "logo": "./assets/logo-v2.png",
+    "screenshots": [
+      "./assets/screenshot-snapshot.png",
+      "./assets/screenshot-deep-dive.png",
+      "./assets/screenshot-morning-brief.png"
+    ],
     "brandColor": "#0EA5E9"
   }
 }

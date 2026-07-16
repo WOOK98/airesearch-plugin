@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AIResearch sample output screenshots</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #06111f;
+        --panel: #0c1b2c;
+        --panel-soft: #10243a;
+        --line: #25445e;
+        --text: #edf7ff;
+        --muted: #9fb3c7;
+        --green: #25d49a;
+        --cyan: #36c8f3;
+        --amber: #f4c765;
+        --red: #ff7c7c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      .gallery {
+        display: grid;
+        gap: 28px;
+        padding: 32px;
+        width: 1280px;
+      }
+
+      .screen {
+        min-height: 720px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background:
+          radial-gradient(circle at top right, rgba(54, 200, 243, 0.2), transparent 34%),
+          linear-gradient(135deg, #07131f 0%, #101d31 100%);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 24px 32px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(6, 17, 31, 0.78);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-weight: 760;
+        letter-spacing: 0;
+      }
+
+      .mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: conic-gradient(from 35deg, #37d2f5, #26d69a, #6e79ff, #37d2f5);
+        position: relative;
+      }
+
+      .mark::after {
+        content: "";
+        position: absolute;
+        inset: 13px;
+        border-radius: 50%;
+        background: #07131f;
+      }
+
+      .sample {
+        border: 1px solid rgba(244, 199, 101, 0.55);
+        border-radius: 999px;
+        color: var(--amber);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        padding: 8px 12px;
+        text-transform: uppercase;
+      }
+
+      .content {
+        padding: 34px 40px 42px;
+      }
+
+      .eyebrow {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 10px 0 8px;
+        font-size: 42px;
+        line-height: 1.05;
+        letter-spacing: 0;
+      }
+
+      p {
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.55;
+        margin: 0;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(12, 27, 44, 0.88);
+        padding: 22px;
+      }
+
+      .card h2,
+      .card h3 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        line-height: 1.25;
+        letter-spacing: 0;
+      }
+
+      .metric {
+        color: var(--green);
+        font-size: 34px;
+        font-weight: 780;
+        line-height: 1;
+      }
+
+      .note {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .wide {
+        grid-column: span 2;
+      }
+
+      .rail {
+        display: grid;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 124px 92px 1fr;
+        gap: 18px;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(16, 36, 58, 0.72);
+        padding: 15px 18px;
+      }
+
+      .ticker {
+        font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+        font-weight: 750;
+      }
+
+      .up {
+        color: var(--green);
+      }
+
+      .down {
+        color: var(--red);
+      }
+
+      .terminal {
+        margin-top: 30px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #06101b;
+        overflow: hidden;
+      }
+
+      .terminal-head {
+        display: flex;
+        gap: 8px;
+        padding: 13px 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--line);
+      }
+
+      pre {
+        margin: 0;
+        padding: 22px;
+        color: #d7eaff;
+        font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+        font-size: 15px;
+        line-height: 1.58;
+        white-space: pre-wrap;
+      }
+
+      .columns {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 22px;
+        margin-top: 28px;
+      }
+
+      .pill {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        border: 1px solid rgba(37, 212, 154, 0.5);
+        border-radius: 999px;
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 750;
+        letter-spacing: 0.08em;
+        padding: 7px 11px;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="gallery">
+      <section class="screen" id="snapshot">
+        <div class="topbar">
+          <div class="brand"><div class="mark"></div>AIResearch Snapshot</div>
+          <div class="sample">Sample Output · format demo</div>
+        </div>
+        <div class="content">
+          <div class="eyebrow">/airesearch:snapshot MU</div>
+          <h1>Micron Technology · one-screen read</h1>
+          <p>
+            A compact company snapshot with entity lock, period-labeled metrics, and
+            evidence notes. This screenshot is sample-formatted for marketplace review;
+            production output is generated from live tool calls.
+          </p>
+          <div class="grid">
+            <div class="card">
+              <h3>Entity lock</h3>
+              <div class="metric">MU</div>
+              <div class="note">NASDAQ · Semiconductors · checked before analysis</div>
+            </div>
+            <div class="card">
+              <h3>Lens emphasis</h3>
+              <div class="metric">Supply</div>
+              <div class="note">Maps upstream constraints and customer read-throughs.</div>
+            </div>
+            <div class="card">
+              <h3>Advice boundary</h3>
+              <div class="metric">No ratings</div>
+              <div class="note">Decision-support only; no target price or order guidance.</div>
+            </div>
+          </div>
+          <div class="terminal">
+            <div class="terminal-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <pre>ENTITY LOCK
+Micron Technology, Inc. · NASDAQ: MU · verified
+
+SNAPSHOT
+- What it does: memory and storage products for data center, PC, mobile, and embedded markets.
+- Why it matters today: memory cycle sensitivity makes supply discipline and customer demand the key watch items.
+- Next step: run /airesearch:deep-dive MU for six-lens review and monitor candidates.
+
+Numbers in production output include source, period, and timestamp labels.</pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="deep-dive">
+        <div class="topbar">
+          <div class="brand"><div class="mark"></div>AIResearch Deep Dive</div>
+          <div class="sample">Sample Output · format demo</div>
+        </div>
+        <div class="content">
+          <div class="eyebrow">/airesearch:deep-dive "Liquid Silicone Rubber"</div>
+          <h1>Industry Mode · thesis-first report</h1>
+          <p>
+            Theme queries resolve into an industry universe before analysis. The report
+            starts with falsifiable judgments, then shows six-lens evidence and monitor
+            rows that can be checked later.
+          </p>
+          <div class="columns">
+            <div class="card">
+              <span class="pill">Entity Lock</span>
+              <h2 style="margin-top: 14px">Liquid Silicone Rubber · Industry Mode</h2>
+              <p>Ambiguous terms are resolved before the report can run.</p>
+            </div>
+            <div class="card">
+              <span class="pill">Thesis Quality</span>
+              <h2 style="margin-top: 14px">Evidence completeness, not investment advice</h2>
+              <p>Conviction tier evaluates report structure and evidence closure only.</p>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="card">
+              <h3>I · Demand path</h3>
+              <p>Judgment must include a measurable condition and failure signal.</p>
+            </div>
+            <div class="card">
+              <h3>II · Supply risk</h3>
+              <p>Every figure is paired with source, period, and known blind spot.</p>
+            </div>
+            <div class="card">
+              <h3>III · Monitor row</h3>
+              <p>Metric · current · trigger · frequency · source, JSON-backed.</p>
+            </div>
+          </div>
+          <div class="terminal">
+            <div class="terminal-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <pre>REPORT STRUCTURE
+1. Entity Lock
+2. Three falsifiable judgments
+3. Six-lens body: Supply Chain, Fundamentals, Macro, Technicals, Sentiment, Risk Matrix
+4. Thesis invalidation conditions
+5. Monitor panel JSON
+6. Conviction tier = thesis quality, not buy/sell advice</pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="brief">
+        <div class="topbar">
+          <div class="brand"><div class="mark"></div>AIResearch Morning Brief</div>
+          <div class="sample">Sample Output · format demo</div>
+        </div>
+        <div class="content">
+          <div class="eyebrow">/airesearch:morning-brief</div>
+          <h1>Watchlist-first pre-market scan</h1>
+          <p>
+            The brief ranks watchlist items by attention needed, then connects changed
+            facts back to prior thesis monitors.
+          </p>
+          <div class="rail">
+            <div class="row">
+              <div class="ticker">MU</div>
+              <div class="down">Flagged</div>
+              <div>Monitor condition changed; rerun deep dive to re-check thesis quality.</div>
+            </div>
+            <div class="row">
+              <div class="ticker">NVDA</div>
+              <div class="up">Quiet</div>
+              <div>No watchlist monitor requires attention in this sample view.</div>
+            </div>
+            <div class="row">
+              <div class="ticker">0700.HK</div>
+              <div class="up">Quiet</div>
+              <div>Regional session note attached when exchange data is available.</div>
+            </div>
+          </div>
+          <div class="terminal">
+            <div class="terminal-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <pre>MORNING BRIEF
+Needs attention first, quiet names second.
+
+The production command can use a local watchlist file and hosted MCP tools.
+Sample screenshot contains no market recommendations and no executable orders.</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

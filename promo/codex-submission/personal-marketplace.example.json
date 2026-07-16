@@ -1,0 +1,20 @@
+{
+  "name": "wook-personal-plugins",
+  "interface": {
+    "displayName": "Wook Personal Plugins"
+  },
+  "plugins": [
+    {
+      "name": "airesearch",
+      "source": {
+        "source": "local",
+        "path": "./airesearch"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Public Equity Investing"
+    }
+  ]
+}

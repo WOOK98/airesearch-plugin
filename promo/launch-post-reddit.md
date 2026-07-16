@@ -27,4 +27,6 @@ Install:
 
 Works out of the box with web search. Live market data via MCP: DM for beta key during the early access period.
 
+On Codex/ChatGPT instead? Same repo ships a Codex manifest — personal marketplace guide in `docs/codex-install.md`.
+
 [github.com/WOOK98/airesearch-plugin](https://github.com/WOOK98/airesearch-plugin) · Research tool, not investment advice. Happy to answer questions.

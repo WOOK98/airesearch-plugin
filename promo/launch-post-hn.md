@@ -44,7 +44,9 @@ Industry mode works too — type a theme instead of a ticker:
 
 No API key needed — works with web search out of the box. For live market data, DM me or email hello@airesearchs.com for a beta key.
 
-**Tech stack:** Next.js monorepo, Hono API, Better Auth, hosted MCP server on Vercel. Plugin is two skills (deep-dive + snapshot) in SKILL.md format.
+Claude Code first, Codex-compatible: the same repo ships a `.codex-plugin` manifest, so ChatGPT/Codex users can install it through a personal marketplace (guide in `docs/codex-install.md`).
+
+**Tech stack:** Next.js monorepo, Hono API, Better Auth, hosted MCP server on Vercel. Plugin is three skills (deep-dive, snapshot, morning-brief) in SKILL.md format.
 
 **Disclaimer:** This is a research tool, not investment advice. Always do your own due diligence.
 

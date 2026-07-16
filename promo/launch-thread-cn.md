@@ -68,6 +68,9 @@ Prompt: `/airesearch:snapshot MU`
 不需要 API key 就能用——没有 key 时自动走 web search。
 想要实时市场数据？DM @wook98 或 email hello@airesearchs.com 拿 beta key。
 
+用 Codex/ChatGPT 的同学：同一个仓库自带 `.codex-plugin` 清单，
+走个人 marketplace 两分钟装好（教程：`docs/codex-install.md`）。
+
 → [github.com/WOOK98/airesearch-plugin](https://github.com/WOOK98/airesearch-plugin)
 
 ---

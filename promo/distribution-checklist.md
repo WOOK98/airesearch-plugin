@@ -7,6 +7,8 @@
 | Anthropic Official Plugin Directory | ✅ Exists | Submit via claude.ai/settings/plugins/submit (form-based review) |
 | Cross AI Tools | ✅ crossaitools.com | Community directory with voting; auto-syncs from GitHub .claude-plugin/ manifest |
 | GitHub awesome-claude-code | ✅ Exists | PR to add airesearch-plugin |
+| Codex/ChatGPT public plugin directory | ⛔ Blocked | OpenAI developer identity verification rejected (2026-07-16, region-restricted). Do NOT retry blindly — attempts are limited. Fallback below. |
+| Codex personal marketplace | ✅ Works today | Users add a one-file `marketplace.json` — full guide in `docs/codex-install.md`. Include this path in launch posts as the ChatGPT/Codex install option. |
 
 ## Submission order
 
@@ -27,6 +29,22 @@
 - [ ] Clean environment install test
 - [ ] Demo GIF recorded
 - [ ] API key flow end-to-end test (manual beta distribution)
+
+## Codex distribution (fallback path — decided 2026-07-16)
+
+The OpenAI public directory requires verified developer identity; individual
+verification was rejected (region). Decision: distribute via the personal
+marketplace path and keep the submission bundle warm.
+
+- **Active path:** `docs/codex-install.md` — personal `marketplace.json` +
+  rsync install. Reference it from launch posts wherever ChatGPT/Codex users
+  are addressed.
+- **Kept warm:** `promo/codex-submission/` stays submission-ready. If a
+  verification channel opens later (supported-region ID or registered
+  business entity), submit without rework.
+- Do not present the plugin as "available in the ChatGPT plugin directory"
+  in any launch copy — it is not, and overclaiming distribution is the same
+  failure class as overclaiming results.
 
 ## Discover submission
 

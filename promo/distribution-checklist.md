@@ -26,7 +26,7 @@
 - [x] {{VERIFY:}} placeholders replaced
 - [x] Internal launch bundle removed from plugin distribution
 - [x] Personal marketplace install path verified in repo metadata
-- [ ] Clean environment install test
+- [x] Clean environment install test — 2026-07-18, isolated CLAUDE_CONFIG_DIR, marketplace add + install 0.4.2 + 3 skills verified
 - [ ] Demo GIF recorded
 - [ ] API key flow end-to-end test (manual beta distribution)
 

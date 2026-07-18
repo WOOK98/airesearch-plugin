@@ -16,7 +16,9 @@ The interesting part isn't the plugin — it's the bug I had to fix along the wa
 3. **Server-side validation** — the MCP data server rejects requests for unlisted tickers
 4. **Real-data-only Technical lens** — if the market data fetch fails, the technical analysis is skipped entirely rather than filled with LLM estimates
 
-The plugin now has 5 MCP tools (`resolve_entity`, `get_quote`, `get_financials`, `get_technicals`, `get_etf_holdings`) running at `airesearchs.com/api/mcp`. Every number in the reports comes from live data — Yahoo Finance for fundamentals, deterministic calculations for technicals.
+The plugin now has 5 MCP tools (`resolve_entity`, `get_quote`, `get_financials`, `get_technicals`, `get_etf_holdings`) running at `airesearchs.com/api/mcp`. Every number in the reports comes from live data — licensed market-data feeds for fundamentals, deterministic calculations for technicals.
+
+**Built for the 54%:** an Investing.com survey of 938 US retail investors (March 2026) found 62% already use AI for investing, and 54% use AI chatbots for research — but only partially trust the output. That partial trust is the design target: every number carries a source and period label, entity resolution runs before any analysis, and reports end with invalidation conditions instead of price targets.
 
 **What it looks like:**
 

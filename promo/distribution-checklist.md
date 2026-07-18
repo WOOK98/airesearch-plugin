@@ -4,7 +4,7 @@
 
 | Target | Status | Action |
 |---|---|---|
-| Anthropic Official Plugin Directory | ✅ Exists | Submit via claude.ai/settings/plugins/submit (form-based review) |
+| Anthropic community marketplace (claude-plugins-community) | 📨 Submitted 2026-07-18 | Form done via platform.claude.com/plugins/submit. NOTE: the form feeds the community marketplace (@claude-community), NOT claude-plugins-official — the official directory is editorially curated with no application process. Launch copy must say "community plugin marketplace", never "official directory". |
 | Cross AI Tools | ✅ crossaitools.com | Community directory with voting; auto-syncs from GitHub .claude-plugin/ manifest |
 | GitHub awesome-claude-code | ✅ Exists | PR to add airesearch-plugin |
 | Codex/ChatGPT public plugin directory | ⛔ Blocked | OpenAI developer identity verification rejected (2026-07-16, region-restricted). Do NOT retry blindly — attempts are limited. Fallback below. |
@@ -18,7 +18,7 @@
 4. HN Show HN — 1-2 days after X thread
 5. Reddit r/ClaudeAI — separate post, check sub rules first
 6. English X post — same day as Reddit/HN
-7. Anthropic directory — submit form (review cycle unpredictable, don't block on it)
+7. Anthropic community marketplace — ✅ submitted 2026-07-18 (review cycle unpredictable, don't block on it)
 
 ## Pre-publish blockers
 

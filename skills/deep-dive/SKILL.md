@@ -119,6 +119,32 @@ web search to identify key listed players. Be explicit in the report:
 available." Only name companies that appear in the search results; never
 from memory alone.
 
+### Cross-market expansion (A-shares / H-shares)
+
+US theme ETFs rarely hold A-shares, so a US-ETF-only universe silently
+drops the China-listed leg of most value chains. After building the
+primary constituent table, run one expansion pass:
+
+1. For each chain layer, search for A-share / H-share listed peers
+   (sources: China-listed theme ETF or index constituent lists, HKEX/
+   CNINFO filings, financial-media coverage). Same sourcing rule applies:
+   every name must come from holdings data or a citable search result —
+   never from memory. Tag each with exchange (SSE/SZSE/HKEX) and how it
+   was sourced.
+2. Where the data layer resolves the ticker (e.g. `0700.HK`, `600xxx.SS`),
+   pull real multiples and add a **cross-market valuation gap** table:
+   same-layer US peer vs A/H peer, same multiple, both period-labeled.
+   State the gap as a fact ("trades at 18x TTM vs US peer 45x, a 60%
+   discount") and explain the *structural reasons* for it (liquidity,
+   capital controls, governance premium, index inclusion) — this is
+   analysis, not a rating.
+3. Never write "undervalued, should buy". The compliant form is:
+   discount/premium size + period labels + candidate reasons + what would
+   close the gap (catalyst) + what keeps it open (risk). Deep Dive offers
+   may include A/H names on equal footing with US names.
+4. If no sourced A/H peer exists for a layer, say so — an honest "no
+   listed A-share pure play found in sources" beats a from-memory guess.
+
 ### Output
 
 Produce:
@@ -130,7 +156,10 @@ Produce:
     ETF consensus.
 (c) **Bottleneck analysis**: which layers show bottleneck dynamics
     (sole-source, pricing power, small % of downstream BOM).
-(d) **Deep Dive offer**: suggest 2–3 constituents worth a full six-lens
+(d) **Cross-market valuation gap** (when A/H peers resolve in the data
+    layer): same-layer, same-multiple, period-labeled comparison with
+    structural discount/premium reasons.
+(e) **Deep Dive offer**: suggest 2–3 constituents worth a full six-lens
     Deep Dive, with a one-line reason for each.
 
 ### Hard rules for Industry Mode
